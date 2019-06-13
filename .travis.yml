@@ -6,4 +6,4 @@ before_install:
   - docker build -t silvanhab/docker-react:latest -f Dockerfile.dev .
 
 script:
-  - docker run silvanhab/docker-react npm run test -- --coverage
+  - docker run -e CI=true silvanhab/docker-react npm run test -- --coverage
