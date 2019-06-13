@@ -1,0 +1,10 @@
+# Define basefile
+FROM node:alpine
+# Set project root in container
+WORKDIR '/app'
+# Setup container
+COPY package.json .
+RUN npm install
+COPY . .
+# Run app
+CMD ["npm", "run", "start"]
